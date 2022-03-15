@@ -35,20 +35,20 @@ b- press i for inserting.
 a- Go to Dir :Cd cvat/serverless/openvino/omz/public/mask_rcnn_inception_resnet_v2_atrous_coco/nuclio.<br/>
 b- press i for inserting.<br/>
 c- check attribute node that under trigger node and
-add new attribite \*Port: **with any number above 1000\***
-add new attribite \*Port: **with any number above 1000\*** .<br/>
-d- check attributes node under platform node and add new attributte \*network: **cvat_cvat\***
-d- press ESC then **:wq**
-10- back to cvat dir : cd ../../../../../..
-12- open localhost with 8080 port , 8070 and check every thing working.
-11- create new nuclio project: nuctl create project cvat
-12- deploy function: for(e.g) deploying mask Rcnn:
-nuctl deploy --project-name cvat \
- --path serverless/openvino/omz/public/mask_rcnn_inception_resnet_v2_atrous_coco/nuclio \
- --volume `pwd`/serverless/common:/opt/nuclio/common \
- --platform local
-13- wait until deploying completed ,then open cvat, creat task and use auto annotation.
-e- press ESC then **:wq**
+add new attribite Port: **with any number above 1000**
+add new attribite Port: **with any number above 1000** .<br/>
+d- check attributes node under platform node and add new attributte network: **cvat_cvat**
+d- press ESC then **:wq** <br/>
+10- back to cvat dir : cd ../../../../../.. <br/>
+12- open localhost with 8080 port , 8070 and check every thing working.<br/>
+11- create new nuclio project: nuctl create project cvat<br/>
+12- deploy function: for(e.g) deploying mask Rcnn:<br/>
+nuctl deploy --project-name cvat \<br/>
+--path serverless/openvino/omz/public/mask_rcnn_inception_resnet_v2_atrous_coco/nuclio \<br/>
+--volume `pwd`/serverless/common:/opt/nuclio/common \<br/>
+--platform local<br/>
+13- wait until deploying completed ,then open cvat, creat task and use auto annotation.<br/>
+e- press ESC then **:wq**<br/>
 10- back to cvat dir : cd ../../../../../.. <br/>
 11- open localhost with 8080 port , 8070 and check every thing working.<br/>
 12- create new nuclio project: nuctl create project cvat.<br/>
@@ -58,3 +58,8 @@ nuctl deploy --project-name cvat \<br/>
 --volume `pwd`/serverless/common:/opt/nuclio/common \<br/>
 --platform local<br/>
 13- wait until deploying completed ,then open cvat, creat task and use auto annotation.<br/>
+
+**OR**
+
+1- for CPU deployment: serverless/deploy_gpu.sh serverless/tensorflow/matterport/mask_rcnn **path of function**
+2- for GPU deployment: serverless/deploy_gpu.sh serverless/tensorflow/matterport/mask_rcnn **path of function**
