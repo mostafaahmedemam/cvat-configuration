@@ -40,28 +40,31 @@ hint: add new attribite Port: **with any number above 1000** .
 
 - check attributes node under platform node and add new attributte network: **cvat_cvat**
 - press ESC then **:wq**
-  10- back to cvat dir : cd ../../../../../.. <br/>
-  <br/>
-  12- open localhost with 8080 port , 8070 and check every thing working.<br/>
-  <br/>
-  11- create new nuclio project: nuctl create project cvat<br/>
-  <br/>
-  12- deploy function: for(e.g) deploying mask Rcnn:<br/>
-  <br/>
-  nuctl deploy --project-name cvat \<br/>
-  --path serverless/openvino/omz/public/mask_rcnn_inception_resnet_v2_atrous_coco/nuclio \<br/>
-  --volume `pwd`/serverless/common:/opt/nuclio/common \<br/>
-  --platform local<br/>
-  <br/>
-  13- wait until deploying completed ,then open cvat, creat task and use auto annotation.<br/>
-  <br/>
-  e- press ESC then **:wq**<br/>
-  13r- deploy function: for(e.g) deploying mask Rcnn:<br/>
-  nuctl deploy --project-name cvat \<br/>
-  --path serverless/openvino/omz/public/mask_rcnn_inception_resnet_v2_atrous_coco/nuclio \<br/>
-  --volume `pwd`/serverless/common:/opt/nuclio/common \<br/>
-  --platform local<br/>
-  15- wait until deploying completed ,then open cvat, creat task and use auto annotation.<br/>
+
+###
+
+10- back to cvat dir : cd ../../../../../.. <br/>
+<br/>
+12- open localhost with 8080 port , 8070 and check every thing working.<br/>
+<br/>
+11- create new nuclio project: nuctl create project cvat<br/>
+<br/>
+12- deploy function: for(e.g) deploying mask Rcnn:<br/>
+<br/>
+nuctl deploy --project-name cvat \<br/>
+--path serverless/openvino/omz/public/mask_rcnn_inception_resnet_v2_atrous_coco/nuclio \<br/>
+--volume `pwd`/serverless/common:/opt/nuclio/common \<br/>
+--platform local<br/>
+<br/>
+13- wait until deploying completed ,then open cvat, creat task and use auto annotation.<br/>
+<br/>
+e- press ESC then **:wq**<br/>
+13r- deploy function: for(e.g) deploying mask Rcnn:<br/>
+nuctl deploy --project-name cvat \<br/>
+--path serverless/openvino/omz/public/mask_rcnn_inception_resnet_v2_atrous_coco/nuclio \<br/>
+--volume `pwd`/serverless/common:/opt/nuclio/common \<br/>
+--platform local<br/>
+15- wait until deploying completed ,then open cvat, creat task and use auto annotation.<br/>
 
 **OR**
 
