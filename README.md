@@ -12,9 +12,10 @@ Hint: Check if Wsl default Version is 2 : open power shell (as administrator) an
 ### Docker Configuration with ubuntu:
 
 1- open docker Desktop, then settings <br/>
-a- In general check if **Expose daemon on tcp without TLS** is **Enabled**, and **use docker compose V2** is **Disabled** <br/>
-b- In Resourses, Enable **Enable Integration with my default WSL distro**, and **ubuntu 18.04** Enabled as addtional distros<br/>
-c- Restart Docker Desktop <br/>
+
+- In general check if **Expose daemon on tcp without TLS** is **Enabled**, and **use docker compose V2** is **Disabled** <br/>
+- In Resourses, Enable **Enable Integration with my default WSL distro**, and **ubuntu 18.04** Enabled as addtional distros<br/>
+- Restart Docker Desktop <br/>
 
 ### CVAT configuation:
 
@@ -32,38 +33,40 @@ c- Restart Docker Desktop <br/>
 7- sudo chmod +x nuctl-1.5.16-linux-amd64<br/>
 8- sudo ln -sf $(pwd)/nuctl-<version>-linux-amd64 /usr/local/bin/nuctl <br/>
 9- here we need to change in function.yaml file:<br/>
-a- Go to Dir :Cd cvat/serverless/openvino/omz/public/mask_rcnn_inception_resnet_v2_atrous_coco/nuclio<br/>
-b- press i for inserting.<br/>
-<br/>
-hint: add new attribite Port: **with any number above 1000**<br/>
-hint: add new attribite Port: **with any number above 1000** .<br/>
-<br/>
-d- check attributes node under platform node and add new attributte network: **cvat_cvat**
-<br/>
-d- press ESC then **:wq** <br/>
-<br/>
-10- back to cvat dir : cd ../../../../../.. <br/>
-<br/>
-12- open localhost with 8080 port , 8070 and check every thing working.<br/>
-<br/>
-11- create new nuclio project: nuctl create project cvat<br/>
-<br/>
-12- deploy function: for(e.g) deploying mask Rcnn:<br/>
-<br/>
-nuctl deploy --project-name cvat \<br/>
---path serverless/openvino/omz/public/mask_rcnn_inception_resnet_v2_atrous_coco/nuclio \<br/>
---volume `pwd`/serverless/common:/opt/nuclio/common \<br/>
---platform local<br/>
-<br/>
-13- wait until deploying completed ,then open cvat, creat task and use auto annotation.<br/>
-<br/>
-e- press ESC then **:wq**<br/>
-13r- deploy function: for(e.g) deploying mask Rcnn:<br/>
-nuctl deploy --project-name cvat \<br/>
---path serverless/openvino/omz/public/mask_rcnn_inception_resnet_v2_atrous_coco/nuclio \<br/>
---volume `pwd`/serverless/common:/opt/nuclio/common \<br/>
---platform local<br/>
-15- wait until deploying completed ,then open cvat, creat task and use auto annotation.<br/>
+
+- Go to Dir :Cd cvat/serverless/openvino/omz/public/mask_rcnn_inception_resnet_v2_atrous_coco/nuclio<br/>
+- press i for inserting.<br/>
+  <br/>
+
+```
+hint: add new attribite Port: **with any number above 1000**
+hint: add new attribite Port: **with any number above 1000** .
+```
+
+- check attributes node under platform node and add new attributte network: **cvat_cvat**
+- press ESC then **:wq**
+  10- back to cvat dir : cd ../../../../../.. <br/>
+  <br/>
+  12- open localhost with 8080 port , 8070 and check every thing working.<br/>
+  <br/>
+  11- create new nuclio project: nuctl create project cvat<br/>
+  <br/>
+  12- deploy function: for(e.g) deploying mask Rcnn:<br/>
+  <br/>
+  nuctl deploy --project-name cvat \<br/>
+  --path serverless/openvino/omz/public/mask_rcnn_inception_resnet_v2_atrous_coco/nuclio \<br/>
+  --volume `pwd`/serverless/common:/opt/nuclio/common \<br/>
+  --platform local<br/>
+  <br/>
+  13- wait until deploying completed ,then open cvat, creat task and use auto annotation.<br/>
+  <br/>
+  e- press ESC then **:wq**<br/>
+  13r- deploy function: for(e.g) deploying mask Rcnn:<br/>
+  nuctl deploy --project-name cvat \<br/>
+  --path serverless/openvino/omz/public/mask_rcnn_inception_resnet_v2_atrous_coco/nuclio \<br/>
+  --volume `pwd`/serverless/common:/opt/nuclio/common \<br/>
+  --platform local<br/>
+  15- wait until deploying completed ,then open cvat, creat task and use auto annotation.<br/>
 
 **OR**
 
