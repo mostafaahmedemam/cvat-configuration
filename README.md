@@ -24,7 +24,6 @@ Hint: Check if Wsl default Version is 2 : open power shell (as administrator) an
 
 ```
 git clone https://github.com/opencv/cvat
-
 ```
 
 3- go to cvat dir
@@ -37,7 +36,6 @@ cd cvat
 
 ```
 docker-compose -f docker-compose.yml -f components/serverless/docker-compose.serverless.yml up -d
-
 ```
 
 5- back to user dir
@@ -56,7 +54,6 @@ wget https://github.com/nuclio/nuclio/releases/download/1.5.16/nuctl-1.5.16-linu
 
 ```
 sudo chmod +x nuctl-1.5.16-linux-amd64
-
 ```
 
 8-
