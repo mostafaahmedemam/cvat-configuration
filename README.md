@@ -60,8 +60,9 @@ nuctl deploy --project-name cvat \
 
 13- wait until deploying completed ,then open cvat, creat task and use auto annotation.<br/>
 
-```
 13r- deploy function: for(e.g) deploying mask Rcnn:
+
+```
 nuctl deploy --project-name cvat \
 --path serverless/openvino/omz/public/mask_rcnn_inception_resnet_v2_atrous_coco/nuclio \
 --volume `pwd`/serverless/common:/opt/nuclio/common \
