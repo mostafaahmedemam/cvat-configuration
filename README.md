@@ -20,34 +20,92 @@ Hint: Check if Wsl default Version is 2 : open power shell (as administrator) an
 ### CVAT configuation:
 
 1- open ubuntu.<br/>
-2- Run command : git clone https://github.com/opencv/cvat <br/>
-3- cd cvat<br/>
-4- Run docker command: docker-compose -f docker-compose.yml -f components/serverless/docker-compose.serverless.yml up -d<br/>
-5- cd ..
-<br/>
-6-install nuclio with cvat supported version 1.5.16: wget https://github.com/nuclio/nuclio/releases/download/1.5.16/nuctl-1.5.16-linux-amd64 <br/>
-7- sudo chmod +x nuctl-1.5.16-linux-amd64<br/>
-8- sudo ln -sf $(pwd)/nuctl-<version>-linux-amd64 /usr/local/bin/nuctl <br/>
-9- here we need to change in function.yaml file:<br/>
+2- Run command :
 
-- Go to Dir :Cd cvat/serverless/openvino/omz/public/mask_rcnn_inception_resnet_v2_atrous_coco/nuclio<br/>
-- press i for inserting.<br/>
+```git clone https://github.com/opencv/cvat
 
 ```
-hint: add new attribite Port: **with any number above 1000**
-hint: add new attribite Port: **with any number above 1000** .
+
+3- go to cvat dir
+
+```
+cd cvat
+```
+
+4- Run docker command:
+
+```docker-compose -f docker-compose.yml -f components/serverless/docker-compose.serverless.yml up -d
+
+```
+
+5- back to user dir
+
+```
+cd ..
+```
+
+6-install nuclio with cvat supported version 1.5.16:
+
+```
+wget https://github.com/nuclio/nuclio/releases/download/1.5.16/nuctl-1.5.16-linux-amd64
+```
+
+7- update permission
+
+```sudo chmod +x nuctl-1.5.16-linux-amd64
+
+```
+
+8-
+
+```
+sudo ln -sf $(pwd)/nuctl-<version>-linux-amd64 /usr/local/bin/nuctl
+```
+
+9- here we need to change in function.yaml file:<br/>
+
+- run following command and file will opened using vs-code :
+
+```
+code cvat/serverless/openvino/omz/public/mask_rcnn_inception_resnet_v2_atrous_coco/nuclio
+```
+
+- add port attributes
+
+```
+triggers:
+    myHttpTrigger:
+      maxWorkers: 2
+      kind: 'http'
+      workerAvailabilityTimeoutMilliseconds: 10000
+      attributes:
+        port: 5600 #with any value above 1000
+        maxRequestBodySize: 33554432 # 32MB
 ```
 
 - check attributes node under platform node and add new attributte network: **cvat_cvat**
-- press ESC then **:wq**
+
+```
+platform:
+    attributes:
+      restartPolicy:
+        name: always
+        maximumRetryCount: 3
+      mountMode: volume
+      network: cvat_cvat
+```
+
+- save changes
 
 ###
 
-10- back to cvat dir : cd ../../../../../.. <br/>
 <br/>
-12- open localhost with 8080 port , 8070 and check every thing working.<br/>
+10- open localhost with 8080 port , 8070 and check every thing working.<br/>
 <br/>
-11- create new nuclio project: nuctl create project cvat<br/>
+11- create new nuclio project:
+``` 
+nuctl create project cvat
+```
 <br/>
 12- deploy function: for(e.g) deploying mask Rcnn:<br/>
 
