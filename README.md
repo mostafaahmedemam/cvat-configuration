@@ -20,13 +20,9 @@ Hint: Check if Wsl default Version is 2 : open power shell (as administrator) an
 ### CVAT configuation:
 
 1- open ubuntu.<br/>
-<br/>
 2- Run command : git clone https://github.com/opencv/cvat <br/>
-<br/>
 3- cd cvat<br/>
-<br/>
 4- Run docker command: docker-compose -f docker-compose.yml -f components/serverless/docker-compose.serverless.yml up -d<br/>
-<br/>
 5- cd ..
 <br/>
 6-install nuclio with cvat supported version 1.5.16: wget https://github.com/nuclio/nuclio/releases/download/1.5.16/nuctl-1.5.16-linux-amd64 <br/>
@@ -36,7 +32,6 @@ Hint: Check if Wsl default Version is 2 : open power shell (as administrator) an
 
 - Go to Dir :Cd cvat/serverless/openvino/omz/public/mask_rcnn_inception_resnet_v2_atrous_coco/nuclio<br/>
 - press i for inserting.<br/>
-  <br/>
 
 ```
 hint: add new attribite Port: **with any number above 1000**
