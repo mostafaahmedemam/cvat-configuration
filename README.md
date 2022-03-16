@@ -73,5 +73,14 @@ nuctl deploy --project-name cvat \
 
 **OR**
 
-1- for CPU deployment: serverless/deploy_gpu.sh serverless/tensorflow/matterport/mask_rcnn **path of function**<br/>
-2- for GPU deployment: serverless/deploy_gpu.sh serverless/tensorflow/matterport/mask_rcnn **path of function**
+1- for CPU deployment:
+
+```
+serverless/deploy_gpu.sh serverless/tensorflow/matterport/mask_rcnn <path of function>
+```
+
+2- for GPU deployment:
+
+```
+serverless/deploy_gpu.sh serverless/tensorflow/matterport/mask_rcnn <path of function>
+```
