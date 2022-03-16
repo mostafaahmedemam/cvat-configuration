@@ -22,7 +22,8 @@ Hint: Check if Wsl default Version is 2 : open power shell (as administrator) an
 1- open ubuntu.<br/>
 2- Run command :
 
-```git clone https://github.com/opencv/cvat
+```
+git clone https://github.com/opencv/cvat
 
 ```
 
@@ -52,7 +53,8 @@ wget https://github.com/nuclio/nuclio/releases/download/1.5.16/nuctl-1.5.16-linu
 
 7- update permission
 
-```sudo chmod +x nuctl-1.5.16-linux-amd64
+```
+sudo chmod +x nuctl-1.5.16-linux-amd64
 
 ```
 
