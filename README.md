@@ -82,7 +82,7 @@ triggers:
       kind: 'http'
       workerAvailabilityTimeoutMilliseconds: 10000
       attributes:
-        port: 5600 #with any value above 1000
+        port: 5600 # with any value above 1000
         maxRequestBodySize: 33554432 # 32MB
 ```
 
